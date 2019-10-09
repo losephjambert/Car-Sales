@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Header from './components/Header';
-import AddedFeatures from './components/AddedFeatures';
+import CarContainer from './components/CarContainer';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
@@ -32,10 +31,7 @@ const App = () => {
 
   return (
     <div className='boxes'>
-      <div className='box'>
-        <Header car={state.car} />
-        <AddedFeatures car={state.car} />
-      </div>
+      <CarContainer state={state} />
       <div className='box'>
         <AdditionalFeatures store={state.additionalFeatures} />
         <Total car={state.car} additionalPrice={state.additionalPrice} />
