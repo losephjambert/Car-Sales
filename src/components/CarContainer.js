@@ -6,11 +6,24 @@ import AddedFeatures from './AddedFeatures';
 // will connect to the store to get dispatch and props
 // will connect to car state
 
-export default function CarContainer({ state }) {
+const CarContainer = ({ state }) => {
   return (
     <div className='box'>
       <Header car={state.car} />
       <AddedFeatures car={state.car} />
     </div>
   );
-}
+};
+
+// now i need to use connect to map state and dispatch to props
+const mapStateToProps = state => {
+  console.log(state);
+  return {};
+};
+
+// const mapDispatchToProps
+
+export default connect(
+  mapStateToProps,
+  {}
+)(CarContainer);
