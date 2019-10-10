@@ -31,7 +31,7 @@ const App = () => {
 
   return (
     <div className='boxes'>
-      <CarContainer state={state} />
+      <CarContainer />
       <div className='box'>
         <AdditionalFeatures store={state.additionalFeatures} />
         <Total car={state.car} additionalPrice={state.additionalPrice} />
