@@ -6,7 +6,7 @@ import AdditionalFeatures from './AdditionalFeatures';
 import Total from './Total';
 
 // actions
-import { addFeature } from '../actions';
+import { addFeature } from '../../actions';
 
 const AdditionalFeaturesContainer = ({ additionalFeatures, carPrice, additionalPrice, addFeature }) => {
   return (

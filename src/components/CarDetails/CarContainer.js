@@ -6,7 +6,7 @@ import Header from './Header';
 import AddedFeatures from './AddedFeatures';
 
 // actions
-import { removeFeature } from '../actions';
+import { removeFeature } from '../../actions';
 
 const CarContainer = ({ features, image, name, price, test, removeFeature }) => {
   return (
