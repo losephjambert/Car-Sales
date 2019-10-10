@@ -1,9 +1,7 @@
 import initialState from '../state';
 import { ADD_FEATURE, REMOVE_FEATURE } from '../actions';
 
-const { car } = initialState;
-
-export default (state = car, action) => {
+export default (state = initialState.car, action) => {
   switch (action.type) {
     case ADD_FEATURE:
       return {

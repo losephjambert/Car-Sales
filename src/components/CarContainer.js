@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
+// components
 import Header from './Header';
 import AddedFeatures from './AddedFeatures';
 
+// actions
 import { removeFeature } from '../actions';
 
 const CarContainer = ({ features, image, name, price, test, removeFeature }) => {
@@ -18,12 +21,6 @@ const mapStateToProps = state => {
   const { car } = state;
   return {
     ...car,
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    test: () => dispatch({ type: 'TEST' }),
   };
 };
 

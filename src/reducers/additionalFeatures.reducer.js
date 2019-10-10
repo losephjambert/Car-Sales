@@ -1,9 +1,7 @@
 import initialState from '../state';
 import { ADD_FEATURE, REMOVE_FEATURE } from '../actions';
 
-const { additionalFeatures } = initialState;
-
-export default (state = additionalFeatures, action) => {
+export default (state = initialState.additionalFeatures, action) => {
   switch (action.type) {
     case ADD_FEATURE:
       console.log('add feature', state, action.payload);
