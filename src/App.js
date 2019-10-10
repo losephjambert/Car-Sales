@@ -1,17 +1,16 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 // components
-import CarContainer from './components/CarContainer';
-import AdditionalFeaturesContainer from './components/AdditionalFeaturesContainer';
+import CarSelectorContainer from './components/CarSelector';
+import CarDetailsContainer from './components/CarDetails';
 
 const App = () => {
   return (
-    <div className='boxes'>
-      <CarContainer />
-      <div className='box'>
-        <AdditionalFeaturesContainer />
-      </div>
-    </div>
+    <Switch>
+      <Route exact path='/' component={CarSelectorContainer} />
+      <Route path='/purchase' component={CarDetailsContainer} />
+    </Switch>
   );
 };
 
