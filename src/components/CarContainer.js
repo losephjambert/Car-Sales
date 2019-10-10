@@ -6,11 +6,11 @@ import AddedFeatures from './AddedFeatures';
 // will connect to the store to get dispatch and props
 // will connect to car state
 
-const CarContainer = ({ features, image, name, price }) => {
+const CarContainer = ({ features, image, name, price, test }) => {
   return (
     <div className='box'>
       <Header image={image} name={name} price={price} />
-      <AddedFeatures features={features} />
+      <AddedFeatures features={features} test={test} />
     </div>
   );
 };
@@ -23,9 +23,13 @@ const mapStateToProps = state => {
   };
 };
 
-// const mapDispatchToProps
+const mapDispatchToProps = dispatch => {
+  return {
+    test: () => dispatch({ type: 'TEST' }),
+  };
+};
 
 export default connect(
   mapStateToProps,
-  {}
+  mapDispatchToProps
 )(CarContainer);
