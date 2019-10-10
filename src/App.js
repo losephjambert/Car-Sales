@@ -1,8 +1,7 @@
 import React from 'react';
 
 import CarContainer from './components/CarContainer';
-import AdditionalFeatures from './components/AdditionalFeatures';
-import Total from './components/Total';
+import AdditionalFeaturesContainer from './components/AdditionalFeaturesContainer';
 
 const App = () => {
   const state = {
@@ -33,8 +32,7 @@ const App = () => {
     <div className='boxes'>
       <CarContainer />
       <div className='box'>
-        <AdditionalFeatures store={state.additionalFeatures} />
-        <Total car={state.car} additionalPrice={state.additionalPrice} />
+        <AdditionalFeaturesContainer />
       </div>
     </div>
   );
