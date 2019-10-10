@@ -8,7 +8,6 @@ export default (state = initialState.additionalPrice, action) => {
     case REMOVE_FEATURE:
       return state - action.payload.price;
     default:
-      console.log('additionalPriceReducer default case', state);
       return state;
   }
 };
