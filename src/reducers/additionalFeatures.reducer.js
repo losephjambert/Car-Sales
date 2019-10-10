@@ -6,8 +6,7 @@ export default (state = initialState.additionalFeatures, action) => {
     case ADD_FEATURE:
       return [...state.filter(f => f.id !== action.payload.id)];
     case REMOVE_FEATURE:
-      const sortedState = [...state, { ...action.payload }].sort((a, b) => a.id - b.id);
-      return sortedState;
+      return [...state, { ...action.payload }].sort((a, b) => a.id - b.id);
     default:
       return state;
   }
