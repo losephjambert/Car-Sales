@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import AddedFeatures from './AddedFeatures';
 
-const CarContainer = ({ features, image, name, price, test }) => {
+import { removeFeature } from '../actions';
+
+const CarContainer = ({ features, image, name, price, test, removeFeature }) => {
   return (
     <div className='box'>
       <Header image={image} name={name} price={price} />
-      <AddedFeatures features={features} test={test} />
+      <AddedFeatures features={features} test={test} removeFeature={removeFeature} />
     </div>
   );
 };
@@ -27,5 +29,5 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { removeFeature }
 )(CarContainer);
