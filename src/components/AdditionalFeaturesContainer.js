@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import AdditionalFeatures from './AdditionalFeatures';
 import Total from './Total';
 
-const AdditionalFeaturesContainer = ({ additionalFeatures, carPrice, additionalPrice }) => {
+import { addFeature } from '../actions';
+
+const AdditionalFeaturesContainer = ({ additionalFeatures, carPrice, additionalPrice, addFeature }) => {
   return (
     <div className='box'>
-      <AdditionalFeatures additionalFeatures={additionalFeatures} />
+      <AdditionalFeatures additionalFeatures={additionalFeatures} addFeature={addFeature} />
       <Total carPrice={carPrice} additionalPrice={additionalPrice} />
     </div>
   );
@@ -15,7 +17,7 @@ const AdditionalFeaturesContainer = ({ additionalFeatures, carPrice, additionalP
 const mapStateToProps = state => {
   const {
     additionalFeatures,
-    car: { price },
+    car: { price, features },
     additionalPrice,
   } = state;
   return {
@@ -27,11 +29,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    test: () => dispatch({ type: 'TEST' }),
+    addFeature,
   };
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { addFeature }
 )(AdditionalFeaturesContainer);
